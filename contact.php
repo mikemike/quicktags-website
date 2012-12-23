@@ -36,6 +36,17 @@
 
     <div class="container-narrow">
 
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="/">Home</a></li>
+          <li><a href="/buy">Buy</a></li>
+          <li class="active"><a href="/contact">Contact</a></li>
+        </ul>
+        <h3 class="muted"><a href="/"><img src="/assets/img/logo.png" alt="QuickTags"></a></h3>
+      </div>
+
+      <hr>
+
       <div class="row-fluid marketing">
         <div class="span12">
           <h1>Contact QuickTags</h1>
@@ -58,32 +69,40 @@
         </div>
       </div>
 
+      <hr>
+
+      <a name="contact"></a>
+
       <div class="row-fluid">
         <div class="span12">
           <h3>Contact Form</h3>
-          <form class="form-horizontal">
+
+          <?php 
+
+          $form = '          
+          <form class="form-horizontal contact" method="post" action="#contact">
             <div class="control-group">
               <label class="control-label" for="inputName">Name</label>
               <div class="controls">
-                <input type="text" id="inputName" placeholder="Name" name="name">
+                <input type="text" id="inputName" placeholder="Name" name="name" value="'. (!empty($_POST['name']) ? $_POST['name'] : '') .'">
               </div>
             </div>
             <div class="control-group">
               <label class="control-label" for="inputEmail">Email</label>
               <div class="controls">
-                <input type="email" id="inputEmail" placeholder="Email" name="email">
+                <input type="email" id="inputEmail" placeholder="Email" name="email" value="'. (!empty($_POST['email']) ? $_POST['email'] : '') .'">
               </div>
             </div>
             <div class="control-group">
               <label class="control-label" for="inputPhone">Phone</label>
               <div class="controls">
-                <input type="tel" id="inputPhone" placeholder="Phone" name="tel">
+                <input type="tel" id="inputPhone" placeholder="Phone" name="tel" value="'. (!empty($_POST['tel']) ? $_POST['tel'] : '') .'">
               </div>
             </div>
             <div class="control-group">
               <label class="control-label" for="inputEnquiry">Enquiry</label>
               <div class="controls">
-                <textarea id="inputEnquiry" name="enquiry"></textarea>
+                <textarea id="inputEnquiry" name="enquiry">'. (!empty($_POST['enquiry']) ? $_POST['enquiry'] : '') .'</textarea>
               </div>
             </div>
             <div class="control-group">
@@ -91,7 +110,35 @@
                 <button type="submit" class="btn">Send</button>
               </div>
             </div>
-          </form>
+          </form>';
+
+          if(!empty($_POST)){
+
+            if(empty($_POST['name']) || empty($_POST['email']) || empty($_POST['tel']) || empty($_POST['enquiry'])){
+              ?>
+              <div class="alert alert-error">
+                Sorry, you need to fill out every field.
+              </div>
+              <?php
+              echo $form;
+            } else {
+              $message = "Contact form used on QuickTags website\n\n";
+              $message.= "Name:\t".$_POST['name']."\n";
+              $message.= "Email:\t".$_POST['email']."\n";
+              $message.= "Tel:\t".$_POST['tel']."\n";
+              $message.= "Enquiry:\t".$_POST['enquiry']."\n";
+              mail('mgriffiths@gmail.com', 'Contact form used on QuickTags website', $message, "From: ".$_POST['name']." <".$_POST['email'].">");
+              ?>
+              <div class="alert alert-success">
+                Thanks, we will be in touch as soon as possible - usually within 1 business day.
+              </div>
+              <?php
+            }
+
+          } else {
+            echo $form;
+          } 
+          ?>
         </div>
       </div>
       <hr>
