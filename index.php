@@ -49,6 +49,7 @@
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
           <li class="active"><a href="/">Home</a></li>
+          <li><a href="/faq">FAQ</a></li>
           <li><a href="/buy">Buy</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
