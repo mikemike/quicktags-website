@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Buy QuickTags, the NFC bluetooth toggle stickers</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" /> 
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Email QuickTags using the contact form. Request custom NFC tags">
 

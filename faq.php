@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>Frequently Asked Questions about QuickTags the useful NFC stickers</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" /> 
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Frequently asked questions (FAQ) about QuickTags, NFC stickers to toggle bluetooth">
 

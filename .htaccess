@@ -1,7 +1,18 @@
 # Enable Rewrite Engine
 RewriteEngine on
 
-#Create friendly URL
-RewriteRule ^contact$ contact.php [L]
-RewriteRule ^faq$ faq.php [L]
-RewriteRule ^buy$ buy.php [L]
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^www\.getquicktags\.com$
+RewriteRule (.*) http://www.getquicktags.com/$1 [R=301,L]
+
+# Rewrite /contact.php > /contact/ and force the trailing slash
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^/]+)/$ $1.php
+RewriteRule ^([^/]+)/([^/]+)/$ /$1/$2.php
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$
+RewriteRule (.*)$ /$1/ [R=301,L]

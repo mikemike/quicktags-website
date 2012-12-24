@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>QuickTags NFC tags to toggle bluetooth and connect to WiFi</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" /> 
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="QuickTags are NFC stickers and tags that automate tasks, such as toggling bluetooth or connecting to a WiFi network">
 
