@@ -3,3 +3,5 @@ RewriteEngine on
 
 #Create friendly URL
 RewriteRule ^contact$ contact.php [L]
+RewriteRule ^faq$ faq.php [L]
+RewriteRule ^buy$ buy.php [L]

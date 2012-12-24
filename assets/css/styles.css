@@ -48,3 +48,9 @@ hr{
 .contact .control-label{ width:80px; }
 .contact .controls{ margin-left:90px; }
 .contact textarea{ width: 460px; height: 175px; }
+
+/* Buy page */
+.buy hr{ clear:both; }
+.item{ clear:both; }
+.item .pull-left{ margin-right:10px; }
+.item .pull-right{ margin-left:10px; }
