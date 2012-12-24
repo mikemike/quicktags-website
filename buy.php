@@ -5,7 +5,7 @@
     <title>Buy QuickTags, the NFC bluetooth toggle stickers</title>
     <link rel="icon" href="/favicon.ico" type="image/x-icon" /> 
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Email QuickTags using the contact form. Request custom NFC tags">
 
@@ -21,6 +21,18 @@
 
     <!-- Fav and touch icons -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $(".buy a").click(function(event){   
+          event.preventDefault();
+          $('html,body').animate({scrollTop:$('[name="'+this.hash.substring(1)+'"]').offset().top}, 500);
+          setTimeout(function(){
+            window.location=window.location+'#enquiry';
+          }, 501);
+        });
+        $('html,body').animate({scrollTop:$('[name="'+this.hash.substring(1)+'"]').offset().top}, 500);
+      });
+    </script>
 
     <script type="text/javascript">
       var _gaq = _gaq || [];
